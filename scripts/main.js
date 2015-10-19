@@ -148,7 +148,6 @@ musicApp.queryArtists = function(queryType, artist){
 		dataType: 'json'
 		}).then(function(res) {
 			musicApp.displayResultsFromArtists(res.response.artists);
-		console.log(res);
 		
 //		check if results are 0, apologize! also remove any '+' from search string
 		
@@ -245,52 +244,48 @@ musicApp.displayResultsFromArtists = function(artist){
 
 	$.each(artist, function(i, value){
 		var artist = $('<h3>').addClass('artistResult').text( value.name );
-		var artistDescription = $('<p>').addClass('artistDescription').text( value.description );
 		var artistUL = $('<ul>').addClass('artistUL').attr('data-artist', value.name.split(' ').join('+'));
 //		pass each genre to the queryArtist function and return results
 		
 		$( '#resultContainer' ).addClass('addFlexRow');
 		$( '#resultContainer' ).removeClass('addFlexColumn');
-		
-		musicApp.queryArtists( musicApp.similarArtists, value.name);
-		
 
 //		check if description of genre is empty, say sorry!
 		
 		if (value.description === ''){
 			artistDescription = $('<p>').addClass('artistDescription').text( 'Sorry! There is no description on the server.' );
 		};
-		var resultCombo = $('<div>').addClass('resultFromArtist').append(artist, artistDescription);
+		var resultCombo = $('<div>').addClass('resultFromArtist').append(artist);
 		
-		$('#resultContainer').append(resultCombo).append(artistUL);
+		$('#resultContainer').append(resultCombo);
 	});
 };
 
-musicApp.displayResultsArtists = function(artist){
-	$('#similar').text( 'similar to ' + musicApp.userInput.split('+').join(' ') + '...');
-	
-
-	$.each(genres, function(i, value){
-		var genre = $('<h3>').addClass('genreResult').text( value.name );
-		var artistDescription = $('<p>').addClass('artistDescription').text( value.description );
-		var artistsBelow = $('<p>').addClass('artistsBelow').text('artists:');
-		var artistUL = $('<ul>').addClass('artistUL').attr('data-genre', value.name.split(' ').join('+'));
-		
-//		pass each genre to the queryArtist function and return results
-		
-		musicApp.queryArtistsFromGenres( musicApp.findArtists, value.name);
-		
-
-//		check if description of genre is empty, say sorry!
-		
-		if (value.description === ''){
-			genreDescription = $('<p>').addClass('genreDescription').text( 'Sorry! There is no description on the server.' );
-		};
-		var resultCombo = $('<div>').addClass('result').append(genre, genreDescription);
-		
-		$('#resultContainer').append(resultCombo).append(artistsBelow).append(artistUL);
-	});
-};
+//musicApp.displayResultsArtists = function(artist){
+//	$('#similar').text( 'similar to ' + musicApp.userInput.split('+').join(' ') + '...');
+//	
+//
+//	$.each(genres, function(i, value){
+//		var genre = $('<h3>').addClass('genreResult').text( value.name );
+//		var artistDescription = $('<p>').addClass('artistDescription').text( value.description );
+//		var artistsBelow = $('<p>').addClass('artistsBelow').text('artists:');
+//		var artistUL = $('<ul>').addClass('artistUL').attr('data-genre', value.name.split(' ').join('+'));
+//		
+////		pass each genre to the queryArtist function and return results
+//		
+//		musicApp.queryArtistsFromGenres( musicApp.findArtists, value.name);
+//		
+//
+////		check if description of genre is empty, say sorry!
+//		
+//		if (value.description === ''){
+//			genreDescription = $('<p>').addClass('genreDescription').text( 'Sorry! There is no description on the server.' );
+//		};
+//		var resultCombo = $('<div>').addClass('result').append(genre, genreDescription);
+//		
+//		$('#resultContainer').append(resultCombo).append(artistsBelow).append(artistUL);
+//	});
+//};
 
 musicApp.go = function(){
 
