@@ -243,7 +243,7 @@ musicApp.displayResultsFromArtists = function(artist){
 	$('#similar').text( 'similar to ' + musicApp.userInput.split('+').join(' ') + '...');
 
 	$.each(artist, function(i, value){
-		var artist = $('<h3>').addClass('artistResult').text( value.name );
+		var artist = $('<h3>').addClass('artistResult').html("<a target='_blank' href='" + musicApp.last + value.name + "'>" + value.name + "</a>");
 		var artistUL = $('<ul>').addClass('artistUL').attr('data-artist', value.name.split(' ').join('+'));
 //		pass each genre to the queryArtist function and return results
 		

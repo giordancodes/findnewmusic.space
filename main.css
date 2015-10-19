@@ -132,6 +132,10 @@ button:hover, button:focus { color: #e8eddf; background: #333533; }
 
 #resultContainer h3 { color: #A3D9FF; padding-top: 1.5rem; }
 
+#resultContainer h3 a { text-decoration: none; color: #A3D9FF; -webkit-transition: color 0.6s; transition: color 0.6s; }
+
+#resultContainer h3 a:hover, #resultContainer h3 a:focus { color: #e8eddf; }
+
 #resultContainer .error { color: #f5cb5c; }
 
 .resultFromArtist { -webkit-box-flex: 1; -webkit-flex: 1 0 50%; -ms-flex: 1 0 50%; flex: 1 0 50%; }
