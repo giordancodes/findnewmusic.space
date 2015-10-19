@@ -205,10 +205,15 @@ button{
 //	cursor: pointer;
 }
 
+.artistResult{
+	background: url(/heart.svg) no-repeat center;
+	margin-top: 5rem;
+	cursor: pointer;
+}
+
 #resultContainer {
 	display: flex;
 	flex-wrap: wrap;
-	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
 	padding: 1rem 1rem 15rem;
@@ -220,6 +225,18 @@ button{
 	.error{
 		color: $color3;
 	}
+}
+
+.resultFromArtist{
+	flex: 1 0 50%;
+}
+
+.addFlexRow{
+	flex-direction: row;
+}
+
+.addFlexColumn{
+	flex-direction: column;
 }
 
 .artistsBelow{
