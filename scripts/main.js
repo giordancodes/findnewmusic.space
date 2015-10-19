@@ -2,6 +2,8 @@ var musicApp = {};
 
 var $randoGenresSpan = $('.randoGenres span');
 
+var regex = /The Identifier specified does not exist/;
+
 function random(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 };
@@ -147,14 +149,12 @@ musicApp.queryArtists = function(queryType, artist){
 		method: 'GET',
 		dataType: 'json'
 		}).then(function(res) {
+//		verify input is an artist in the api
+			if(res.response.status.message === 'The Identifier specified does not exist: ' + artist){
+				$('#resultContainer').html("<h3>sorry, " + artist + " doesn't show in the database!<h3/>");
+			}else{
 			musicApp.displayResultsFromArtists(res.response.artists);
-		
-//		check if results are 0, apologize! also remove any '+' from search string
-		
-		if (res.response.total === 0){
-			$('#resultContainer').html("<h3>sorry, there's nothing quite like " + genre.split('+').join(' ') + "!<h3/>");
-			console.log('0');
-		}
+			}
 	});
 };
 
@@ -180,32 +180,6 @@ musicApp.queryArtistsFromGenres = function(queryType, genre){
 		
 	});
 };
-
-//query similar artists bases on artist
-
-//musicApp.queryArtistsFromArtist = function(queryType, artist){
-//	$.ajax({
-//		url: queryType+artist,
-//		method: 'GET',
-//		dataType: 'json'
-//		}).then(function(res) {
-//		console.log(res);
-//			musicApp.artistList = res.response.artists.name;
-//		console.log('artistfromartist');
-//		
-////		append artists as li's in artistList ul
-//		
-//		$.each(res.response.artists, function(i, value) {
-//			
-////			create url for each artist
-//			
-//			var artistLink = musicApp.last + value.name.split(' ').join('+');
-//			var artistList = $('<li>').append('<a target="_blank" href=' + artistLink + '>' + value.name + '</a>');
-//			$('ul[data-artist="' + artist.split(' ').join('+') + '"]').append(artistList);
-//		});
-//		
-//	});
-//};
 
 //display all genre-searched results
 //first genre with descriptions, then related artists with clickable links to last.fm page
