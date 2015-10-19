@@ -1,0 +1,315 @@
+@import 'setup';
+
+$color1: #A3D9FF; //rgba(207, 219, 213, 100)
+$color2: #e8eddf; //rgba(232, 237, 223, 100)
+$color3: #f5cb5c; //rgba(245, 203, 92, 100)
+$color4: RGBA(5, 6, 6, 1);
+$color5: #333533; //rgba(51, 53, 51, 100)
+$lato: 'Lato', sans-serif;
+$roboto: 'Roboto Condensed', sans-serif;
+$shadow: 4px 3px 9px 0px rgba(0,0,0,0.75);
+$shadowOutline: 0 1px 0 rgba(0, 0, 0, 0.8);
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	background: $color4;
+	font-family: $lato;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+.container {
+//	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100vh;
+}
+
+.wrapper{
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 0 2rem;
+}
+
+#h1Head{
+	background: #000;
+}
+
+h1{
+	color: $color3;
+	margin: 0;
+	padding: 2rem 0;
+	text-align: center;
+	font-size: 6rem;
+	text-shadow: $shadowOutline;
+	a{
+		text-decoration: none;
+		color: $color3;
+		transition: color 1s;
+		&:hover, &:focus{
+			color: $color1;
+		}
+	}
+}
+
+h3{
+	margin: 0;
+	padding: 1rem 0;
+	text-align: center;
+	font-size: 3rem;
+	color: $color2;
+}
+
+h4{
+	font-size: 1.4rem;
+	text-align: center;
+	color: $color2;
+	font-weight: 300;
+}
+
+.note{
+	font-size: 1.6rem;
+	a{
+		text-decoration: none;
+		color: $color3;
+		transition: color 1s;
+		&:hover, &:focus{
+			color: $color1;
+		}
+	}
+}
+
+p{
+	color: $color2;
+	font-weight: 300;
+	font-size: 1.9rem;
+	line-height: 3.5rem;
+	text-align: center;
+	letter-spacing: 0.1rem;
+	padding: 0;
+}
+
+ul.artistUL{
+	list-style: none;
+	color: $color3;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	li{
+		font-size: 2rem;
+		flex: 1 0 50%;
+		text-align: center;
+		color: $color2;
+		padding: 0.5rem;
+		font-weight: 900;
+	}
+	a{
+		text-decoration: none;
+		color: $color3;
+		transition: color 0.6s;
+		&:hover, &:focus{
+			color: $color2;
+		}
+	}
+}
+
+.genreCount {
+	padding: 3rem 0;
+	span{
+		color: $color1;
+	}
+}
+
+button{
+	padding: 1rem;
+	border-radius: 5%;
+	margin-left: 1rem;
+	font-size: 1.4rem;
+	background: $color2;
+	box-shadow: $shadow;
+	color: $color5;
+	transition: color 1s, background 1s;
+	&:hover, &:focus{
+		color: $color2;
+		background: $color5;
+	}
+}
+
+.infoFlex{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-content: center;
+	justify-content: space-between;
+	background:
+		url(/heart.svg) no-repeat center,
+		rgba(5, 6, 6, 1);
+	background-blend-mode: screen;
+	background-size: 40%, contain;
+	height: 100%;
+}
+
+.searchForm {
+		width: 100%;
+		margin: 0 auto;
+		padding: 2rem 0;
+		text-align: center;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		input{
+			width: 40%;
+			color: $color3;
+			height: 4rem;
+			font-size: 1.4rem;
+			border: 0;
+			background: $color5;
+			padding: 0.5rem;
+			box-shadow: $shadow;
+	}
+}
+
+.topText {
+	font-family: $roboto;
+	padding: 0.8rem;
+	text-shadow: $shadowOutline;
+	font-size: 2.2rem;
+	width: 50%;
+	margin: 0 auto;
+}
+
+#similar {
+	font-style: italic;
+	text-align: center;
+	font-size: 3rem;
+	color: $color3;
+	font-weight: 300;
+	background: $color5;
+	letter-spacing: 0.2rem;
+}
+
+.similarDiv {
+	padding: 1rem 0;
+}
+	
+.genreResult{
+	background: url(/heart.svg) no-repeat center;
+	margin-top: 5rem;
+//	cursor: pointer;
+}
+
+#resultContainer {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 1rem 15rem;
+	height: 100%;
+	h3{
+		color: $color1;
+		padding-top: 1.5rem;
+	}
+	.error{
+		color: $color3;
+	}
+}
+
+.artistsBelow{
+	font-weight: 900;
+	color: $color1;
+	letter-spacing: 0.6rem;
+	font-size: 2rem;
+}
+					
+footer{
+	padding: 1rem 0;
+	background: #000;
+//	margin-top: rem;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 10rem;
+	img{
+		padding: 1rem 1rem 0;
+		border-radius: 1rem;
+		margin-bottom: -1.4rem;
+		transition: border-left 1s, border-right 1s;
+		&:hover, &:focus, &:active{
+			border-left: 5px solid $color1;
+			border-right: 5px solid $color1;
+		}
+	}
+	p{
+		color: $color1;
+		font-size: 1.4rem;
+		margin: 0;
+		a{
+			text-decoration: none;
+			color: $color1;
+			font-weight: 900;
+			transition: color 1s;
+			&:hover,&:focus{
+				color: $color3;
+			}
+		}
+	}
+	
+//==================
+//media queries
+//==================
+
+@media all and (max-width: 767px) {
+	.searchForm{
+		width: 100%;
+		input{
+			width: 50%;
+		}
+	}
+		
+	}
+}
+
+@media all and (max-width: 630px) {
+	html{
+		font-size: 75%;
+	}
+	.artistUL{
+			li{
+				a{
+				font-size: 1.8rem;
+					
+				}
+			}
+		}
+	.infoFlex {
+		background-size: 82%, contain;
+}
+	.topText {
+		width: 100%;
+	}
+
+	}
+@media all and (max-width: 480px) {
+	.artistUL{
+			li{
+				a{
+				font-size: 1.6rem;
+				}
+			}
+		}
+	.genreDescription{
+		font-size: 1.8rem;
+		line-height: 2.2rem;
+	}
+}
+
+

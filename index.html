@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Find New Music!</title>
+	<meta name="description" content="Discover new and unique genres of music by searching ones you already love or ones that are completely foreign.">
+	<meta name="keywords" content="new, music, exploration, search">
+	
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+<meta name="msapplication-square70x70logo" content="/smalltile.png" />
+<meta name="msapplication-square150x150logo" content="/mediumtile.png" />
+<meta name="msapplication-wide310x150logo" content="/widetile.png" />
+<meta name="msapplication-square310x310logo" content="/largetile.png" />
+	
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,900,300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+	<div class="container">
+		<h1 id='h1Head'><a href="index.html">Find New Music!</a></h1>
+		<div class="infoFlex wrapper">
+			<h3 class="genreCount">There are currently <span></span> unique genres of music.</h3>
+			<p class="randoGenres topText">A small slice includes <span class=""></span>.</p>
+			<p class="topText">Find new and obscure music! Search for a genre below, view related styles, click a few artists, and fall in love with some new sounds...</p>
+			<h4 class="note">Please note: a free <a href="https://www.spotify.com">Spotify</a> account is recommended (but not necessary!) for listening after selecting an artist below.</h4>
+			
+			<form id='searchGenre' class='searchForm'>
+				<input type="text" placeholder="Enter a genre..." id="searchInput" autofocus>
+				<button type="submit">Search Genre</button>
+			</form>
+			<form id='searchArtist' class='searchForm'>
+				<input type="text" placeholder="Enter an artist..." id="searchInputArtist">
+				<button type="submit">Search Artist</button>
+			</form>
+			
+		</div>
+		<div class="similarDiv"><h2 id="similar"></h2>
+			</div>	
+			<div id="resultContainer" class="wrapper">
+		</div>
+		<footer>
+			<p>code &copy; 2015 <a href="http://giordan.ca" target="_blank">Giordan Battaglin</a></p>
+			<p><a target="_blank" href="http://developer.echonest.com"><img src="assets/echonestLogo.png" alt="api is powered by echonest"></a></p>
+		</footer>
+	</div>
+
+		
+<!--<script src="scripts/jquery-1.11.3.js"></script>	-->
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src='//code.jquery.com/ui/1.11.3/jquery-ui.min.js'></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68381185-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script src="scripts/main.js"></script>
+
+<!--shuffle icon by Jake Davies, heart icon by Catherine Please, music icon by Mirel Masic, from: https://thenounproject.com-->
+
+</body>
+</html>
