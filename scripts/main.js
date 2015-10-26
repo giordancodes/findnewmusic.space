@@ -118,6 +118,7 @@ musicApp.formSubmitArtist = function(){
 //	remove spaces for search string
 		musicApp.userInput = artistName.split(' ').join('+');
 		musicApp.queryArtists( musicApp.findSimilarArtists, musicApp.userInput );
+
 		}
 	});
 	
@@ -177,7 +178,7 @@ musicApp.queryArtistsFromGenres = function(queryType, genre){
 			var artistList = $('<li>').append('<a target="_blank" href=' + artistLink + '>' + value.name + '</a>');
 			$('ul[data-genre="' + genre.split(' ').join('+') + '"]').append(artistList);
 		});
-		
+
 	});
 };
 
