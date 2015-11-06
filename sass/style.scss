@@ -1,6 +1,6 @@
 @import 'setup';
 $grey: #434343;
-$color2: #e8eddf; //rgba(232, 237, 223, 100)
+$white: #e8eddf; //rgba(232, 237, 223, 100)
 $orange: #f5cb5c;
 $color5: #333533; //rgba(51, 53, 51, 100)
 $lato: 'Lato', sans-serif;
@@ -18,24 +18,34 @@ body{
 	height: 100%;
 }
 
-.container {
-	flex-wrap: wrap;
-	flex-direction: column;
-	justify-content: space-between;
-	min-height: 100vh;
-}
+//.container {
+//	flex-wrap: wrap;
+//	flex-direction: column;
+//	justify-content: space-between;
+//	min-height: 100vh;
+//}
 
 .wrapper{
 	max-width: 1200px;
 	margin: 0 auto;
 }
 
+.flex{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.column{
+	flex-direction: column;
+}
+
+
 h1{
 	color: $orange;
 	margin: 0;
 	padding: 2rem 0;
 	text-align: left;
-	font-size: 6rem;
+	font-size: 8rem;
 	font-weight: 700;
 	a{
 		text-decoration: none;
@@ -52,13 +62,13 @@ h3{
 	padding: 1rem 0;
 	text-align: left;
 	font-size: 3rem;
-	color: $color2;
+	color: $white;
 }
 
 h4{
 	font-size: 1.4rem;
 	text-align: left;
-	color: $color2;
+	color: $white;
 	font-weight: 300;
 }
 
@@ -75,7 +85,7 @@ h4{
 }
 
 p{
-	color: $color2;
+	color: $white;
 	font-weight: 300;
 	font-size: 1.9rem;
 	line-height: 3.5rem;
@@ -95,7 +105,7 @@ ul.artistUL{
 		font-size: 2rem;
 		flex: 1 0 50%;
 		text-align: left;
-		color: $color2;
+		color: $white;
 		padding: 0.5rem;
 		font-weight: 900;
 	}
@@ -104,22 +114,8 @@ ul.artistUL{
 		color: $orange;
 		transition: color 0.6s;
 		&:hover, &:focus{
-			color: $color2;
+			color: $white;
 		}
-	}
-}
-
-button{
-	padding: 1rem;
-	border-radius: 5%;
-	margin-left: 1rem;
-	font-size: 1.4rem;
-	background: $color2;
-	color: $color5;
-	transition: color 1s, background 1s;
-	&:hover, &:focus{
-		color: $color2;
-		background: $color5;
 	}
 }
 
@@ -132,6 +128,10 @@ button{
 	height: 100%;
 }
 
+section.searchArea {
+	justify-content: space-between;
+}
+
 label{
 	color: $orange;
 	text-align: left;
@@ -139,22 +139,35 @@ label{
 }
 
 .searchForm {
-		width: 100%;
+		width: 50%;
 		margin: 0 auto;
 		padding: 2rem 0;
 		text-align: left;
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: center;
 		input{
 			width: 40%;
-			color: $orange;
+			color: #000;
 			height: 4rem;
 			font-size: 1.4rem;
 			border: 0;
-			background: $color5;
+			background: $white;
 			padding: 0.5rem;
+	}
+}
+
+button{
+	padding: 1rem;
+	font-size: 1.4rem;
+	background: $orange;
+	color: $color5;
+	border: 0;
+	height: 4rem;
+	width: 8rem;
+	transition: color 1s, background 1s;
+	&:hover, &:focus{
+		color: $white;
+		background: $color5;
 	}
 }
 
@@ -209,7 +222,7 @@ label{
 			color: $grey;
 			transition: color 0.6s;
 			&:hover, &:focus{
-				color: $color2;
+				color: $white;
 			}
 		}
 	}

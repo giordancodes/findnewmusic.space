@@ -32,38 +32,53 @@
 
 <body>
 
+
+<!--header-->
 	<header class="wrapper">
-	<img src="assets/heart.svg" alt="Heart Icon">
+		<img src="assets/heart.svg" alt="Heart Icon">
 		<h1><a href="index.html">Find New Music</a></h1>
 	</header>
-	<div class="container">
-		<div class="infoFlex wrapper">
-			<h3 class="genreCount">There are currently <span></span> unique genres of music.</h3>
-			<p class="randoGenres topText">A small slice includes <span class=""></span>.</p>
-			<p class="topText">Find new and obscure music! Search for a genre or artist below, view related styles, click a few artists, and fall in love with some new sounds...</p>
-			<h4 class="note">Please note: a free <a href="https://www.spotify.com">Spotify</a> account is recommended (but not necessary!) for listening after selecting an artist below.</h4>
-			
-			<label class="wrapper" for="searchInput">Type in any genre below, and discover simliar genres with a selection of artists for each!</label>
-			<form id='searchGenre' class='searchForm'>
-				<input type="text" placeholder="Enter a genre..." id="searchInput" autofocus>
-				<button type="submit">Search Genre</button>
+<!--	/header-->
+	
+	<section class="infoFlex wrapper">
+		<h3 class="genreCount">There are currently <span></span> unique genres of music.</h3>
+		<p class="randoGenres topText">A small slice includes <span class=""></span>.</p>
+		<p class="topText">Find new and obscure music! Search for a genre or artist below, view related styles, click a few artists, and fall in love with some new sounds...</p>
+		<h4 class="note">Please note: a free <a href="https://www.spotify.com">Spotify</a> account is recommended (but not necessary!) for listening after selecting an artist below.</h4>
+	</section>
+
+<!--			user input area for searching artist/genre-->
+		<section class="searchArea wrapper  flex">
+			<form id='searchGenre' class='searchForm column flex'>
+				<label for="searchInput">Genre Search:</label>
+				<div class="userInput">
+					<input type="text" placeholder="Enter a genre..." id="searchInput" autofocus>
+					<button type="submit">Go!</button>
+				</div>
 			</form>
-			<label class="wrapper" for="searchInputArtist">Type in any artist below, and discover simliar artists!</label>
-			<form id='searchArtist' class='searchForm'>
-				<input type="text" placeholder="Enter an artist..." id="searchInputArtist">
-				<button type="submit">Search Artist</button>
+			<form id='searchArtist' class='searchForm column flex'>
+				<label for="searchInputArtist">Artist Search:</label>
+				<div class="userInput">
+					<input type="text" placeholder="Enter an artist..." id="searchInputArtist">
+					<button type="submit">Go!</button>
+				</div>
 			</form>
-			
-		</div>
-		<div class="similarDiv"><h2 id="similar"></h2>
-			</div>	
-			<div id="resultContainer" class="wrapper">
-		</div>
-		<footer>
-			<p>code &copy; 2015 <a href="http://giordan.ca" target="_blank">Giordan Battaglin</a></p>
-			<p><a target="_blank" href="http://developer.echonest.com"><img src="assets/echonestLogo.png" alt="api is powered by echonest"></a></p>
-		</footer>
+		</section>
+
+
+
+
+	<div class="similarDiv"><h2 id="similar"></h2>
+		</div>	
+		<div id="resultContainer" class="wrapper">
 	</div>
+
+<!--		footer-->
+	<footer>
+		<p>code &copy; 2015 <a href="http://giordan.ca" target="_blank">Giordan Battaglin</a></p>
+		<p><a target="_blank" href="http://developer.echonest.com"><img src="assets/echonestLogo.png" alt="api is powered by echonest"></a></p>
+	</footer>
+<!--	/footer-->
 
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src='//code.jquery.com/ui/1.11.3/jquery-ui.min.js'></script>
