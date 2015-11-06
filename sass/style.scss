@@ -1,4 +1,6 @@
 @import 'setup';
+
+//Variables Variables Variables Variables Variables Variables Variables Variables 
 $grey: #434343;
 $white: #e8eddf; //rgba(232, 237, 223, 100)
 $orange: #f5cb5c;
@@ -6,6 +8,7 @@ $color5: #333533; //rgba(51, 53, 51, 100)
 $lato: 'Lato', sans-serif;
 $roboto: 'Roboto Condensed', sans-serif;
 
+//Global Styles Global Styles Global Styles Global Styles Global Styles Global Styles 
 html{
 	font-size: 62.5%;
 }
@@ -15,18 +18,10 @@ body{
 	font-family: $lato;
 	margin: 0;
 	padding: 0;
-	height: 100%;
 }
 
-//.container {
-//	flex-wrap: wrap;
-//	flex-direction: column;
-//	justify-content: space-between;
-//	min-height: 100vh;
-//}
-
 .wrapper{
-	max-width: 1200px;
+	max-width: 1080px;
 	margin: 0 auto;
 }
 
@@ -39,7 +34,7 @@ body{
 	flex-direction: column;
 }
 
-
+//Typography Typography Typography Typography Typography Typography Typography 
 h1{
 	color: $orange;
 	margin: 0;
@@ -72,18 +67,6 @@ h4{
 	font-weight: 300;
 }
 
-.note{
-	font-size: 1.6rem;
-	a{
-		text-decoration: none;
-		color: $orange;
-		transition: color 1s;
-		&:hover, &:focus{
-			color: $grey;
-		}
-	}
-}
-
 p{
 	color: $white;
 	font-weight: 300;
@@ -92,6 +75,16 @@ p{
 	text-align: left;
 	letter-spacing: 0.1rem;
 	padding: 0;
+}
+
+//Section Styling Section Styling Section Styling Section Styling Section Styling 
+
+
+header{
+	padding: 2rem 0;
+	img{
+		width: 8%;
+	}
 }
 
 ul.artistUL{
@@ -119,14 +112,13 @@ ul.artistUL{
 	}
 }
 
-.infoFlex{
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
+.welcomeInfo{
 	align-content: center;
 	justify-content: space-between;
 	height: 100%;
 }
+
+//Search Area Search Area Search Area Search Area Search Area Search Area 
 
 section.searchArea {
 	justify-content: space-between;
@@ -136,6 +128,7 @@ label{
 	color: $orange;
 	text-align: left;
 	font-size: 1.8rem;
+	margin-bottom: 2rem;
 }
 
 .searchForm {
@@ -171,12 +164,8 @@ button{
 	}
 }
 
-.topText {
-	font-family: $roboto;
-	padding: 0.8rem;
-	font-size: 2.2rem;
-	width: 50%;
-	margin: 0 auto;
+.userInput{
+	width: 100%;
 }
 
 #similar {
@@ -249,6 +238,8 @@ button{
 	letter-spacing: 0.6rem;
 	font-size: 2rem;
 }
+
+//Footer Footer Footer Footer Footer Footer Footer Footer Footer Footer 
 					
 footer{
 	padding: 1rem 0;
@@ -258,9 +249,6 @@ footer{
 	left: 0;
 	right: 0;
 	height: 10rem;
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	img{
@@ -274,13 +262,13 @@ footer{
 		}
 	}
 	p{
-		color: $grey;
+		color: $white;
 		font-size: 1.6rem;
 		font-weight: 400;
 		margin: 0;
 		a{
 			text-decoration: none;
-			color: $grey;
+			color: $white;
 			font-weight: 900;
 			transition: color 1s;
 			&:hover,&:focus{
@@ -289,9 +277,8 @@ footer{
 		}
 	}
 	
-//==================
-//media queries
-//==================
+
+//Media Queries Media Queries Media Queries Media Queries Media Queries Media Queries 
 
 @media all and (max-width: 767px) {
 	.searchForm{

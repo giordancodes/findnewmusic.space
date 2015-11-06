@@ -40,25 +40,25 @@
 	</header>
 <!--	/header-->
 	
-	<section class="infoFlex wrapper">
+	
+	<section class="welcomeInfo flex column wrapper">
 		<h3 class="genreCount">There are currently <span></span> unique genres of music.</h3>
 		<p class="randoGenres topText">A small slice includes <span class=""></span>.</p>
 		<p class="topText">Find new and obscure music! Search for a genre or artist below, view related styles, click a few artists, and fall in love with some new sounds...</p>
-		<h4 class="note">Please note: a free <a href="https://www.spotify.com">Spotify</a> account is recommended (but not necessary!) for listening after selecting an artist below.</h4>
 	</section>
 
 <!--			user input area for searching artist/genre-->
-		<section class="searchArea wrapper  flex">
+		<section class="searchArea wrapper flex">
 			<form id='searchGenre' class='searchForm column flex'>
 				<label for="searchInput">Genre Search:</label>
-				<div class="userInput">
+				<div class="userInput flex">
 					<input type="text" placeholder="Enter a genre..." id="searchInput" autofocus>
 					<button type="submit">Go!</button>
 				</div>
 			</form>
 			<form id='searchArtist' class='searchForm column flex'>
 				<label for="searchInputArtist">Artist Search:</label>
-				<div class="userInput">
+				<div class="userInput flex">
 					<input type="text" placeholder="Enter an artist..." id="searchInputArtist">
 					<button type="submit">Go!</button>
 				</div>
@@ -74,7 +74,7 @@
 	</div>
 
 <!--		footer-->
-	<footer>
+	<footer class="flex column">
 		<p>code &copy; 2015 <a href="http://giordan.ca" target="_blank">Giordan Battaglin</a></p>
 		<p><a target="_blank" href="http://developer.echonest.com"><img src="assets/echonestLogo.png" alt="api is powered by echonest"></a></p>
 	</footer>
