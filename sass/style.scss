@@ -1,20 +1,17 @@
 @import 'setup';
-
+$grey: #434343;
 $color2: #e8eddf; //rgba(232, 237, 223, 100)
-$color3: #f5cb5c; //rgba(245, 203, 92, 100)
-$color4: RGBA(5, 6, 6, 1);
+$orange: #f5cb5c;
 $color5: #333533; //rgba(51, 53, 51, 100)
 $lato: 'Lato', sans-serif;
 $roboto: 'Roboto Condensed', sans-serif;
-$shadow: 4px 3px 9px 0px rgba(0,0,0,0.75);
-$shadowOutline: 0 1px 0 rgba(0, 0, 0, 0.8);
 
 html{
 	font-size: 62.5%;
 }
 
 body{
-	background: $color4;
+	background: $grey;
 	font-family: $lato;
 	margin: 0;
 	padding: 0;
@@ -22,7 +19,6 @@ body{
 }
 
 .container {
-//	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
 	justify-content: space-between;
@@ -30,28 +26,23 @@ body{
 }
 
 .wrapper{
-	max-width: 1000px;
+	max-width: 1200px;
 	margin: 0 auto;
-	padding: 0 2rem;
-}
-
-#h1Head{
-	background: #000;
 }
 
 h1{
-	color: $color3;
+	color: $orange;
 	margin: 0;
 	padding: 2rem 0;
-	text-align: center;
+	text-align: left;
 	font-size: 6rem;
-	text-shadow: $shadowOutline;
+	font-weight: 700;
 	a{
 		text-decoration: none;
-		color: $color3;
+		color: $orange;
 		transition: color 1s;
 		&:hover, &:focus{
-			color: $color1;
+			color: white;
 		}
 	}
 }
@@ -59,14 +50,14 @@ h1{
 h3{
 	margin: 0;
 	padding: 1rem 0;
-	text-align: center;
+	text-align: left;
 	font-size: 3rem;
 	color: $color2;
 }
 
 h4{
 	font-size: 1.4rem;
-	text-align: center;
+	text-align: left;
 	color: $color2;
 	font-weight: 300;
 }
@@ -75,10 +66,10 @@ h4{
 	font-size: 1.6rem;
 	a{
 		text-decoration: none;
-		color: $color3;
+		color: $orange;
 		transition: color 1s;
 		&:hover, &:focus{
-			color: $color1;
+			color: $grey;
 		}
 	}
 }
@@ -88,14 +79,14 @@ p{
 	font-weight: 300;
 	font-size: 1.9rem;
 	line-height: 3.5rem;
-	text-align: center;
+	text-align: left;
 	letter-spacing: 0.1rem;
 	padding: 0;
 }
 
 ul.artistUL{
 	list-style: none;
-	color: $color3;
+	color: $orange;
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0;
@@ -103,25 +94,18 @@ ul.artistUL{
 	li{
 		font-size: 2rem;
 		flex: 1 0 50%;
-		text-align: center;
+		text-align: left;
 		color: $color2;
 		padding: 0.5rem;
 		font-weight: 900;
 	}
 	a{
 		text-decoration: none;
-		color: $color3;
+		color: $orange;
 		transition: color 0.6s;
 		&:hover, &:focus{
 			color: $color2;
 		}
-	}
-}
-
-.genreCount {
-	padding: 3rem 0;
-	span{
-		color: $color1;
 	}
 }
 
@@ -131,7 +115,6 @@ button{
 	margin-left: 1rem;
 	font-size: 1.4rem;
 	background: $color2;
-	box-shadow: $shadow;
 	color: $color5;
 	transition: color 1s, background 1s;
 	&:hover, &:focus{
@@ -146,17 +129,12 @@ button{
 	flex-direction: column;
 	align-content: center;
 	justify-content: space-between;
-	background:
-		url(/heart.svg) no-repeat center,
-		rgba(5, 6, 6, 1);
-	background-blend-mode: screen;
-	background-size: 40%, contain;
 	height: 100%;
 }
 
 label{
-	color: $color3;
-	text-align: center;
+	color: $orange;
+	text-align: left;
 	font-size: 1.8rem;
 }
 
@@ -164,27 +142,25 @@ label{
 		width: 100%;
 		margin: 0 auto;
 		padding: 2rem 0;
-		text-align: center;
+		text-align: left;
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: center;
 		input{
 			width: 40%;
-			color: $color3;
+			color: $orange;
 			height: 4rem;
 			font-size: 1.4rem;
 			border: 0;
 			background: $color5;
 			padding: 0.5rem;
-			box-shadow: $shadow;
 	}
 }
 
 .topText {
 	font-family: $roboto;
 	padding: 0.8rem;
-	text-shadow: $shadowOutline;
 	font-size: 2.2rem;
 	width: 50%;
 	margin: 0 auto;
@@ -192,9 +168,9 @@ label{
 
 #similar {
 	font-style: italic;
-	text-align: center;
+	text-align: left;
 	font-size: 3rem;
-	color: $color3;
+	color: $orange;
 	font-weight: 300;
 	background: $color5;
 	letter-spacing: 0.2rem;
@@ -224,13 +200,13 @@ label{
 	padding: 1rem 1rem 15rem;
 	height: 100%;
 	h3{
-		color: $color1;
+		color: $grey;
 		padding-top: 1.5rem;
-		text-align: center;
+		text-align: left;
 		width: 100%;
 		a{
 			text-decoration: none;
-			color: $color1;
+			color: $grey;
 			transition: color 0.6s;
 			&:hover, &:focus{
 				color: $color2;
@@ -238,7 +214,7 @@ label{
 		}
 	}
 	.error{
-		color: $color3;
+		color: $orange;
 	}
 }
 
@@ -256,7 +232,7 @@ label{
 
 .artistsBelow{
 	font-weight: 900;
-	color: $color1;
+	color: $grey;
 	letter-spacing: 0.6rem;
 	font-size: 2rem;
 }
@@ -264,33 +240,38 @@ label{
 footer{
 	padding: 1rem 0;
 	background: #000;
-//	margin-top: rem;
 	position: fixed;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	height: 10rem;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	img{
 		padding: 1rem 1rem 0;
 		border-radius: 1rem;
 		margin-bottom: -1.4rem;
 		transition: border-left 1s, border-right 1s;
 		&:hover, &:focus, &:active{
-			border-left: 5px solid $color1;
-			border-right: 5px solid $color1;
+			border-left: 5px solid $grey;
+			border-right: 5px solid $grey;
 		}
 	}
 	p{
-		color: $color1;
-		font-size: 1.4rem;
+		color: $grey;
+		font-size: 1.6rem;
+		font-weight: 400;
 		margin: 0;
 		a{
 			text-decoration: none;
-			color: $color1;
+			color: $grey;
 			font-weight: 900;
 			transition: color 1s;
 			&:hover,&:focus{
-				color: $color3;
+				color: $orange;
 			}
 		}
 	}
