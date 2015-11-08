@@ -204,13 +204,13 @@ musicApp.displayResults = function(genres){
 		};
 		var resultCombo = $('<div>').addClass('result').append(genre, genreDescription);
 		var resultParent = $( '<div>' ).addClass('resultParent').append(resultCombo).append(artistsBelow).append(artistUL);
-		
-//	$( '#resultContainer' ).addClass('addFlexColumn');
-//	$( '#resultContainer' ).removeClass('addFlexRow');
+	
+//		show results, clear potential error msgs, scroll to results
 	$( '#resultContainer' ).append(resultParent);
-	});
 	$( '#errors' ).empty();
 	$( '#resultContainer' ).smoothScroll();
+		
+	});
 };
 
 //display all artist-searched results
@@ -222,9 +222,6 @@ musicApp.displayResultsFromArtists = function(artist){
 		var artist = $('<h3>').addClass('artistResult').html("<img src='/assets/heart.svg' alt='heart icon'><a target='_blank' href='" + musicApp.last + value.name + "'>" + value.name + "</a>");
 		var artistUL = $('<ul>').addClass('artistUL').attr('data-artist', value.name.split(' ').join('+'));
 //		pass each genre to the queryArtist function and return results
-		
-		$( '#resultContainer' ).addClass('addFlexRow');
-		$( '#resultContainer' ).removeClass('addFlexColumn');
 
 //		check if description of genre is empty, say sorry!
 		
@@ -233,9 +230,11 @@ musicApp.displayResultsFromArtists = function(artist){
 		};
 		var resultCombo = $('<div>').addClass('resultFromArtist').append(artist);
 		
+		//		show results, clear potential error msgs, scroll to results
+
 		$( '#resultContainer' ).append(resultCombo);
-		$( '#resultContainer' ).smoothScroll();
 		$( '#errors' ).empty();
+		$( '#resultContainer' ).smoothScroll();
 
 	});
 };

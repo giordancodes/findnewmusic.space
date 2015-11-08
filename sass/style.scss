@@ -96,6 +96,12 @@ header{
 	line-height: 1.5;
 }
 
+.welcomeInfo{
+	align-content: center;
+	justify-content: space-between;
+	height: 100%;
+}
+
 .topText {
 	font-weight: 400;
 	font-size: 2.4rem;
@@ -106,8 +112,8 @@ header{
 }
 
 .resultParent{
-	width: 50%;
-	padding: 1rem 3rem;
+	width: calc(50% - 5rem);
+	margin: 1rem 5rem 1rem 0;
 }
 
 ul.artistUL{
@@ -123,8 +129,8 @@ ul.artistUL{
 		flex: 1 0 50%;
 		text-align: left;
 		color: $white;
-		padding: 0.5rem;
 		font-weight: 900;
+		padding: .5rem 0;
 	}
 	a{
 		text-decoration: none;
@@ -134,12 +140,6 @@ ul.artistUL{
 			color: $white;
 		}
 	}
-}
-
-.welcomeInfo{
-	align-content: center;
-	justify-content: space-between;
-	height: 100%;
 }
 
 //Search Area Search Area Search Area Search Area Search Area Search Area 
@@ -156,37 +156,36 @@ label{
 }
 
 .searchForm {
-		width: 50%;
-		margin: 0 auto;
-		padding: 2rem 0;
-		text-align: left;
-		align-items: flex-start;
-		justify-content: center;
-		input{
-			width: 60%;
-			color: #000;
-			height: 4rem;
-			font-size: 1.4rem;
-			border: 0;
-			background: $white;
-			padding: 1rem;
+	width: 50%;
+	margin: 0 auto;
+	padding: 2rem 0;
+	text-align: left;
+	align-items: flex-start;
+	justify-content: center;
+	input{
+		width: 60%;
+		color: #000;
+		height: 4rem;
+		font-size: 1.4rem;
+		border: 0;
+		background: $white;
+		padding: 1rem;
+	}
+	button{
+		padding: 1rem;
+		font-size: 1.4rem;
+		background: $orange;
+		color: $color5;
+		border: 0;
+		height: 4rem;
+		width: 8rem;
+		transition: color 1s, background 1s;
+		&:hover, &:focus{
+			color: $white;
+			background: $color5;
 		}
-		button{
-			padding: 1rem;
-			font-size: 1.4rem;
-			background: $orange;
-			color: $color5;
-			border: 0;
-			height: 4rem;
-			width: 8rem;
-			transition: color 1s, background 1s;
-			&:hover, &:focus{
-				color: $white;
-				background: $color5;
-			}
-		}
+	}
 }
-
 
 .userInput{
 	width: 100%;
@@ -204,6 +203,10 @@ label{
 
 .similarDiv {
 	padding: 1rem 0;
+}
+
+#errors{
+	margin-bottom: 1rem;
 }
 	
 .genreResult{
@@ -241,9 +244,6 @@ label{
 			}
 		}
 	}
-	#errors{
-		margin-bottom: 1rem;
-	}
 }
 
 .resultFromArtist{
@@ -260,7 +260,7 @@ label{
 
 .artistsBelow{
 	font-weight: 900;
-	color: $grey;
+	color: $white;
 	letter-spacing: 0.6rem;
 	font-size: 2rem;
 }
@@ -308,7 +308,6 @@ footer{
 
 @media all and (max-width: 980px) {
 	.wrapper{
-//		padding-left: 4rem;
 		
 	}		
 }
