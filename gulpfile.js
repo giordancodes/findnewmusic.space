@@ -56,6 +56,7 @@ gulp.task('watch', function() {
 	gulp.watch('sass/**/*.scss', ['styles']);
 	gulp.watch('./js/**/*.js', ['scripts']);
 	gulp.watch('./**/*.html', reload);
+	gulp.watch('./**/*.js', reload);
 });
 
 gulp.task('default', ['styles', 'scripts', 'images', 'bs', 'watch']);

@@ -23,6 +23,7 @@ body{
 .wrapper{
 	max-width: 960px;
 	margin: 0 auto;
+//	padding-left: 4rem;
 }
 
 .flex{
@@ -38,7 +39,7 @@ body{
 h1{
 	color: $orange;
 	margin: 0;
-	padding: 3rem 0;
+	padding: 3rem 0 1.5rem;
 	text-align: left;
 	font-size: 8rem;
 	font-weight: 700;
@@ -200,12 +201,11 @@ label{
 }
 	
 .genreResult{
-	background: url(/heart.svg) no-repeat center;
+	background: url(/assets/heart.svg) no-repeat center;
 	margin-top: 5rem;
 }
 
 .artistResult{
-	background: url(/heart.svg) no-repeat center;
 	margin-top: 5rem;
 	cursor: pointer;
 }
@@ -222,7 +222,7 @@ label{
 		width: 100%;
 		a{
 			text-decoration: none;
-			color: $grey;
+			color: $orange;
 			transition: color 0.6s;
 			&:hover, &:focus{
 				color: $white;
@@ -257,7 +257,7 @@ label{
 					
 footer{
 	padding: 1rem 0;
-	background: #000;
+	background: #111;
 	position: fixed;
 	bottom: 0;
 	left: 0;
@@ -290,51 +290,15 @@ footer{
 			}
 		}
 	}
-	
+}
 
 //Media Queries Media Queries Media Queries Media Queries Media Queries Media Queries 
 
-@media all and (max-width: 767px) {
-	.searchForm{
-		width: 100%;
-		input{
-			width: 50%;
-		}
-	}
+@media all and (max-width: 980px) {
+	.wrapper{
+//		padding-left: 4rem;
 		
-	}
-}
-
-@media all and (max-width: 630px) {
-	html{
-		font-size: 75%;
-	}
-	.artistUL{
-			li{
-				a{
-				font-size: 1.8rem;
-					
-				}
-			}
-		}
-	.infoFlex {
-		background-size: 82%, contain;
-}
-
-
-	}
-@media all and (max-width: 480px) {
-	.artistUL{
-			li{
-				a{
-				font-size: 1.6rem;
-				}
-			}
-		}
-	.genreDescription{
-		font-size: 1.8rem;
-		line-height: 2.2rem;
-	}
+	}		
 }
 
 
