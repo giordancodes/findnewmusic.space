@@ -86,7 +86,7 @@ musicApp.formSubmitGenre = function(){
 		
 //		make sure search isn't empty
 		if (genreName === ''){
-			$( '#resultContainer' ).html( '<h3 class="error"> Please enter a genre! </h3>' )
+			$( '#errors' ).html( '<h4 class="error"> Please enter a genre! </h4>' )
 		}else{
 		$('#searchInput').val('');
 			
@@ -109,7 +109,7 @@ musicApp.formSubmitArtist = function(){
 		
 //		make sure serach isn't empty
 		if (artistName === ''){
-			$( '#resultContainer' ).html( '<h3 class="error"> Please enter an artist! </h3>' )
+			$( '#errors' ).html( '<h4 class="error"> Please enter an artist! </h4>' )
 		}else{
 		$('#searchInputArtist').val('');
 			
@@ -230,7 +230,9 @@ musicApp.displayResultsFromArtists = function(artist){
 		};
 		var resultCombo = $('<div>').addClass('resultFromArtist').append(artist);
 		
-		$('#resultContainer').append(resultCombo);
+		$( '#resultContainer' ).append(resultCombo);
+		$( '#resultContainer' ).smoothScroll();
+
 	});
 };
 
