@@ -105,9 +105,15 @@ header{
 	margin-bottom: 3rem;
 }
 
+.resultParent{
+	width: 50%;
+	padding: 1rem 3rem;
+}
+
 ul.artistUL{
 	list-style: none;
-	color: $orange;
+	color: $white;
+	font-weight: 400;
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0;
@@ -206,8 +212,13 @@ label{
 }
 
 .artistResult{
-	margin-top: 5rem;
-	cursor: pointer;
+	margin-top: 3rem;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	img{
+		height: 4rem;
+	}
 }
 
 #resultContainer {
@@ -216,16 +227,17 @@ label{
 	padding: 1rem 0 15rem;
 	height: 100%;
 	h3{
-		color: $orange;
-		padding-top: 1.5rem;
+		color: $white;
 		text-align: left;
 		width: 100%;
+		font-weight: 400;
 		a{
 			text-decoration: none;
-			color: $orange;
+			color: $white;
 			transition: color 0.6s;
+			margin-left: 1rem;
 			&:hover, &:focus{
-				color: $white;
+				color: $orange;
 			}
 		}
 	}

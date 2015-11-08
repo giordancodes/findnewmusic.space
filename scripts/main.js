@@ -203,10 +203,11 @@ musicApp.displayResults = function(genres){
 			genreDescription = $('<p>').addClass('genreDescription').text( 'Sorry! There is no description on the server.' );
 		};
 		var resultCombo = $('<div>').addClass('result').append(genre, genreDescription);
+		var resultParent = $( '<div>' ).addClass('resultParent').append(resultCombo).append(artistsBelow).append(artistUL);
 		
-	$( '#resultContainer' ).addClass('addFlexColumn');
-	$( '#resultContainer' ).removeClass('addFlexRow');
-	$( '#resultContainer' ).append(resultCombo).append(artistsBelow).append(artistUL);
+//	$( '#resultContainer' ).addClass('addFlexColumn');
+//	$( '#resultContainer' ).removeClass('addFlexRow');
+	$( '#resultContainer' ).append(resultParent);
 	});
 	$( '#errors' ).empty();
 	$( '#resultContainer' ).smoothScroll();
