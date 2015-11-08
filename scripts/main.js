@@ -1,6 +1,6 @@
 var musicApp = {};
 
-var $randoGenresSpan = $('.randoGenres span');
+var $randoGenresSpan = $('.randoGenres');
 
 var regex = /The Identifier specified does not exist/;
 

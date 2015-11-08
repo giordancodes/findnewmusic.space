@@ -21,7 +21,7 @@ body{
 }
 
 .wrapper{
-	max-width: 1080px;
+	max-width: 960px;
 	margin: 0 auto;
 }
 
@@ -38,7 +38,7 @@ body{
 h1{
 	color: $orange;
 	margin: 0;
-	padding: 2rem 0;
+	padding: 3rem 0;
 	text-align: left;
 	font-size: 8rem;
 	font-weight: 700;
@@ -81,7 +81,7 @@ p{
 
 
 header{
-	padding: 2rem 0;
+	padding: 4rem 0 0 0;
 	img{
 		width: 8%;
 	}
@@ -121,7 +121,7 @@ ul.artistUL{
 //Search Area Search Area Search Area Search Area Search Area Search Area 
 
 section.searchArea {
-	justify-content: space-between;
+	justify-content: flex-start;
 }
 
 label{
@@ -139,13 +139,13 @@ label{
 		align-items: flex-start;
 		justify-content: center;
 		input{
-			width: 40%;
+			width: 60%;
 			color: #000;
 			height: 4rem;
 			font-size: 1.4rem;
 			border: 0;
 			background: $white;
-			padding: 0.5rem;
+			padding: 1rem;
 	}
 }
 
@@ -307,7 +307,7 @@ footer{
 		background-size: 82%, contain;
 }
 	.topText {
-		width: 100%;
+		font-weight: 400;
 	}
 
 	}
