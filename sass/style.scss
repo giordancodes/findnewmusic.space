@@ -87,6 +87,21 @@ header{
 	}
 }
 
+.genreCount {
+	font-size: 1.8rem;
+	font-weight: 400;
+	padding-right: 20%;
+	line-height: 1.5;
+}
+
+.topText {
+	font-weight: 400;
+	font-size: 2.4rem;
+	padding-right: 20%;
+	line-height: 1.5;
+	letter-spacing: .1;
+}
+
 ul.artistUL{
 	list-style: none;
 	color: $orange;
@@ -306,9 +321,7 @@ footer{
 	.infoFlex {
 		background-size: 82%, contain;
 }
-	.topText {
-		font-weight: 400;
-	}
+
 
 	}
 @media all and (max-width: 480px) {
