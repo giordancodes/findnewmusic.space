@@ -90,16 +90,17 @@ header{
 .genreCount {
 	font-size: 1.8rem;
 	font-weight: 400;
-	padding-right: 20%;
+	padding-right: 25%;
 	line-height: 1.5;
 }
 
 .topText {
 	font-weight: 400;
 	font-size: 2.4rem;
-	padding-right: 20%;
+	padding-right: 25%;
 	line-height: 1.5;
 	letter-spacing: .1;
+	margin-bottom: 3rem;
 }
 
 ul.artistUL{
@@ -142,7 +143,7 @@ section.searchArea {
 label{
 	color: $orange;
 	text-align: left;
-	font-size: 1.8rem;
+	font-size: 2.2rem;
 	margin-bottom: 2rem;
 }
 
@@ -184,13 +185,13 @@ label{
 }
 
 #similar {
-	font-style: italic;
 	text-align: left;
-	font-size: 3rem;
-	color: $orange;
+	font-size: 3.6rem;
+	color: $white;
 	font-weight: 300;
-	background: $color5;
 	letter-spacing: 0.2rem;
+	text-transform: uppercase;
+	border-top: 1px solid $white;
 }
 
 .similarDiv {
@@ -200,7 +201,6 @@ label{
 .genreResult{
 	background: url(/heart.svg) no-repeat center;
 	margin-top: 5rem;
-//	cursor: pointer;
 }
 
 .artistResult{
@@ -215,7 +215,7 @@ label{
 	padding: 1rem 0 15rem;
 	height: 100%;
 	h3{
-		color: $grey;
+		color: $orange;
 		padding-top: 1.5rem;
 		text-align: left;
 		width: 100%;
@@ -230,6 +230,8 @@ label{
 	}
 	.error{
 		color: $orange;
+		font-weight: 400;
+		font-size: 3.6rem;
 	}
 }
 

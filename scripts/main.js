@@ -2,8 +2,6 @@ var musicApp = {};
 
 var $randoGenresSpan = $('.randoGenres');
 
-var regex = /The Identifier specified does not exist/;
-
 function random(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 };
@@ -237,7 +235,7 @@ musicApp.displayResultsFromArtists = function(artist){
 };
 
 musicApp.go = function(){
-
+	
 	musicApp.genreCount();
 	musicApp.formSubmitGenre();
 	musicApp.formSubmitArtist();
