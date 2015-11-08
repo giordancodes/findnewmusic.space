@@ -86,7 +86,7 @@ musicApp.formSubmitGenre = function(){
 		$('#similar').empty();
 		var genreName = $('#searchInput').val().toLowerCase();
 		
-//		make sure serach isn't empty
+//		make sure search isn't empty
 		if (genreName === ''){
 			$( '#resultContainer' ).html( '<h3 class="error"> Please enter a genre! </h3>' )
 		}else{

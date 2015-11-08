@@ -161,23 +161,23 @@ label{
 			border: 0;
 			background: $white;
 			padding: 1rem;
-	}
+		}
+		button{
+			padding: 1rem;
+			font-size: 1.4rem;
+			background: $orange;
+			color: $color5;
+			border: 0;
+			height: 4rem;
+			width: 8rem;
+			transition: color 1s, background 1s;
+			&:hover, &:focus{
+				color: $white;
+				background: $color5;
+			}
+		}
 }
 
-button{
-	padding: 1rem;
-	font-size: 1.4rem;
-	background: $orange;
-	color: $color5;
-	border: 0;
-	height: 4rem;
-	width: 8rem;
-	transition: color 1s, background 1s;
-	&:hover, &:focus{
-		color: $white;
-		background: $color5;
-	}
-}
 
 .userInput{
 	width: 100%;
@@ -210,11 +210,9 @@ button{
 }
 
 #resultContainer {
-	display: flex;
-	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1rem 1rem 15rem;
+	padding: 1rem 0 15rem;
 	height: 100%;
 	h3{
 		color: $grey;
