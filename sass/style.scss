@@ -200,7 +200,7 @@ ul.artistUL{
 		flex: 1 0 50%;
 		text-align: left;
 		color: $white;
-		font-weight: 900;
+		font-weight: 400;
 		padding: .5rem 0;
 	}
 	a{
@@ -219,10 +219,7 @@ ul.artistUL{
 }
 
 .artistResult{
-	margin-top: 3rem;
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
+	margin-top: 1rem;
 	img{
 		height: 4rem;
 	}
@@ -233,7 +230,6 @@ ul.artistUL{
 	h3{
 		color: $white;
 		text-align: left;
-		width: 100%;
 		font-weight: 400;
 		a{
 			text-decoration: none;
@@ -245,10 +241,12 @@ ul.artistUL{
 			}
 		}
 	}
+	.artistResult h3{
+	}
 }
 
 .resultFromArtist{
-	flex: 1 0 50%;
+	flex: 1 0 33.33%;
 }
 
 .artistsBelow{
