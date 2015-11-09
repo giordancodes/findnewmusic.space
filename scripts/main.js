@@ -208,7 +208,7 @@ musicApp.displayResults = function(genres){
 //		show results, clear potential error msgs, scroll to results
 	$( '#resultContainer' ).append(resultParent);
 	$( '#errors' ).empty();
-	$( '#resultContainer' ).smoothScroll();
+	$('body,html').animate({scrollTop: $( '.similarDiv' ).offset().top});
 		
 	});
 };
@@ -234,7 +234,7 @@ musicApp.displayResultsFromArtists = function(artist){
 
 		$( '#resultContainer' ).append(resultCombo);
 		$( '#errors' ).empty();
-		$( '#resultContainer' ).smoothScroll();
+		$('body,html').animate({scrollTop: $( '.similarDiv' ).offset().top});
 
 	});
 };
@@ -244,7 +244,7 @@ musicApp.go = function(){
 	musicApp.genreCount();
 	musicApp.formSubmitGenre();
 	musicApp.formSubmitArtist();
-
+	
 };
 
 
