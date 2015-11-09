@@ -111,37 +111,6 @@ header{
 	margin-bottom: 3rem;
 }
 
-.resultParent{
-	width: calc(50% - 5rem);
-	margin: 1rem 5rem 1rem 0;
-}
-
-ul.artistUL{
-	list-style: none;
-	color: $white;
-	font-weight: 400;
-	display: flex;
-	flex-wrap: wrap;
-	margin: 0;
-	padding: 0;
-	li{
-		font-size: 2rem;
-		flex: 1 0 50%;
-		text-align: left;
-		color: $white;
-		font-weight: 900;
-		padding: .5rem 0;
-	}
-	a{
-		text-decoration: none;
-		color: $orange;
-		transition: color 0.6s;
-		&:hover, &:focus{
-			color: $white;
-		}
-	}
-}
-
 //Search Area Search Area Search Area Search Area Search Area Search Area 
 
 section.searchArea {
@@ -208,7 +177,41 @@ label{
 #errors{
 	margin-bottom: 1rem;
 }
+
+//Results Results Results Results Results Results Results Results Results 
 	
+.resultParent{
+	width: calc(50% - 5rem);
+	margin: 1rem 5rem 1rem 0;
+	align-items: flex-start;
+}
+
+ul.artistUL{
+	list-style: none;
+	color: $white;
+	font-weight: 400;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	li{
+		font-size: 2rem;
+		flex: 1 0 50%;
+		text-align: left;
+		color: $white;
+		font-weight: 900;
+		padding: .5rem 0;
+	}
+	a{
+		text-decoration: none;
+		color: $orange;
+		transition: color 0.6s;
+		&:hover, &:focus{
+			color: $white;
+		}
+	}
+}
+
 .genreResult{
 	background: url(/assets/heart.svg) no-repeat center;
 	margin-top: 5rem;
@@ -225,10 +228,7 @@ label{
 }
 
 #resultContainer {
-	justify-content: space-between;
-	align-items: center;
 	padding: 1rem 0 15rem;
-	height: 100%;
 	h3{
 		color: $white;
 		text-align: left;
