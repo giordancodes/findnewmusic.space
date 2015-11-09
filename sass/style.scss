@@ -86,6 +86,7 @@ header{
 	padding: 4rem 0 0 0;
 	img{
 		width: 8%;
+		cursor: pointer;
 	}
 }
 
@@ -250,19 +251,13 @@ ul.artistUL{
 	flex: 1 0 50%;
 }
 
-.addFlexRow{
-	flex-direction: row;
-}
-
-.addFlexColumn{
-	flex-direction: column;
-}
-
 .artistsBelow{
-	font-weight: 900;
+	font-weight: 200;
 	color: $white;
 	letter-spacing: 0.6rem;
-	font-size: 2rem;
+	font-size: 3rem;
+	border-bottom: solid 1px $white;
+	padding-bottom: 1.2rem;
 }
 
 //Footer Footer Footer Footer Footer Footer Footer Footer Footer Footer 
@@ -283,8 +278,8 @@ footer{
 		margin-bottom: -1.4rem;
 		transition: border-left 1s, border-right 1s;
 		&:hover, &:focus, &:active{
-			border-left: 5px solid $grey;
-			border-right: 5px solid $grey;
+			border-left: 5px solid $orange;
+			border-right: 5px solid $orange;
 		}
 	}
 	p{
@@ -306,10 +301,16 @@ footer{
 
 //Media Queries Media Queries Media Queries Media Queries Media Queries Media Queries 
 
-@media all and (max-width: 980px) {
+@media all and (max-width: 1080px) {
 	.wrapper{
-		
+//		max-width: 800px;
 	}		
+}
+
+@media all and (max-width: 688px) {
+	.resultParent {
+		width: 100%;
+	}
 }
 
 
