@@ -5,6 +5,7 @@ $grey: #434343;
 $white: #e8eddf; //rgba(232, 237, 223, 100)
 $orange: #f5cb5c;
 $color5: #333533; //rgba(51, 53, 51, 100)
+$dark: #212121;
 $lato: 'Lato', sans-serif;
 $roboto: 'Roboto Condensed', sans-serif;
 
@@ -262,7 +263,7 @@ ul.artistUL{
 					
 footer{
 	padding: 1rem 0;
-	background: #111;
+	background: $dark;
 	position: fixed;
 	bottom: 0;
 	left: 0;
@@ -299,10 +300,21 @@ footer{
 
 //Media Queries Media Queries Media Queries Media Queries Media Queries Media Queries 
 
-@media all and (max-width: 1080px) {
+@media all and (max-width: 1019px) {
 	.wrapper{
-//		max-width: 800px;
-	}		
+		padding-left: 3rem;
+		padding-right: 3rem;
+	}
+	.similarDiv{
+		padding-left: 0;
+		padding-right: 0;
+	}
+	#resultContainer h3{
+		font-size: 2.4rem;
+	}
+	.resultFromArtist{
+		padding-left: 1.4rem;
+	}
 }
 
 @media all and (max-width: 688px) {
