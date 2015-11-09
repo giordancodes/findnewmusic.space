@@ -206,11 +206,14 @@ musicApp.displayResults = function(genres){
 		var resultParent = $( '<div>' ).addClass('resultParent').append(resultCombo).append(artistsBelow).append(artistUL);
 	
 //		show results, clear potential error msgs, scroll to results
-	$( '#resultContainer' ).append(resultParent);
-	$( '#errors' ).empty();
-	$('body,html').animate({scrollTop: $( '.similarDiv' ).offset().top});
-		
+		$( '#resultContainer' ).append(resultParent);
+		$( '#errors' ).empty();	
 	});
+	
+//	scroll to results
+		$( '.similarDiv' ).focus();
+		$('body,html').animate({scrollTop: $( '.similarDiv' ).offset().top});
+		
 };
 
 //display all artist-searched results
@@ -230,13 +233,15 @@ musicApp.displayResultsFromArtists = function(artist){
 		};
 		var resultCombo = $('<div>').addClass('resultFromArtist').append(artist);
 		
-		//		show results, clear potential error msgs, scroll to results
+		//		show results, clear potential error msgs
 
 		$( '#resultContainer' ).append(resultCombo);
 		$( '#errors' ).empty();
-		$('body,html').animate({scrollTop: $( '.similarDiv' ).offset().top});
-
 	});
+	
+//	scroll to results
+	$( '.similarDiv' ).focus();
+	$('body,html').animate({scrollTop: $( '.similarDiv' ).offset().top});
 };
 
 musicApp.go = function(){
