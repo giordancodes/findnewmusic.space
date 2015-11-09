@@ -188,6 +188,7 @@ musicApp.displayResults = function(genres){
 	
 
 	$.each(genres, function(i, value){
+		var icon = $( '<img src="/assets/heart.svg">' );
 		var genre = $('<h3>').addClass('genreResult').text( value.name );
 		var genreDescription = $('<p>').addClass('genreDescription').text( value.description );
 		var artistsBelow = $('<p>').addClass('artistsBelow').text('artists:');
@@ -202,7 +203,7 @@ musicApp.displayResults = function(genres){
 		if (value.description === ''){
 			genreDescription = $('<p>').addClass('genreDescription').text( 'Sorry! There is no description on the server.' );
 		};
-		var resultCombo = $('<div>').addClass('result').append(genre, genreDescription);
+		var resultCombo = $('<div>').addClass('result').append(icon, genre, genreDescription);
 		var resultParent = $( '<div>' ).addClass('resultParent').append(resultCombo).append(artistsBelow).append(artistUL);
 	
 //		show results, clear potential error msgs, scroll to results

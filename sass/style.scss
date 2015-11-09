@@ -187,6 +187,9 @@ label{
 	width: calc(50% - 5rem);
 	margin: 1rem 5rem 1rem 0;
 	align-items: flex-start;
+	img{
+		padding-top: 2rem;
+	}
 }
 
 ul.artistUL{
@@ -216,8 +219,7 @@ ul.artistUL{
 }
 
 .genreResult{
-	background: url(/assets/heart.svg) no-repeat center;
-	margin-top: 5rem;
+	margin-top: 2rem;
 }
 
 .artistResult{
@@ -269,9 +271,11 @@ footer{
 	bottom: 0;
 	left: 0;
 	right: 0;
-	height: 10rem;
-	align-items: center;
-	justify-content: center;
+	.footerInfo {
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+	}
 	img{
 		padding: 1rem 1rem 0;
 		border-radius: 1rem;
@@ -306,6 +310,9 @@ footer{
 		padding-left: 3rem;
 		padding-right: 3rem;
 	}
+	#similar{
+		padding-left: 1rem;
+	}
 	.similarDiv{
 		padding-left: 0;
 		padding-right: 0;
@@ -316,9 +323,12 @@ footer{
 	.resultFromArtist{
 		padding-left: 1.4rem;
 	}
+	.resultParent{
+		padding-left: 1rem;;
+	}
 }
 
-@media all and (max-width: 688px) {
+@media all and (max-width: 698px) {
 	.resultParent {
 		width: 100%;
 	}
