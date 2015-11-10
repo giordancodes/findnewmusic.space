@@ -329,9 +329,49 @@ footer{
 }
 
 @media all and (max-width: 698px) {
+	header{
+		padding-top: 2rem;
+	}
+	h1{
+		font-size: 5rem;
+		padding-top: 2rem;
+	}
+	.hvr-pulse{
+		width: 13%;
+	}
+	.genreCount {
+		padding-right: 2rem;
+		font-size: 1.6rem;
+	}
+	.topText {
+		padding-right: 2rem;
+		font-size: 2rem;
+}
 	.resultParent {
 		width: 100%;
 	}
 }
+
+@media all and (max-width: 599px) {
+	.searchForm {
+		width: 100%;
+		margin: 0;
+	}
+	footer{
+		.wrapper{
+			padding: 0 1rem 0 1rem;
+//			justify-content: flex-start;
+		}
+		p{
+			font-size: 12px;
+		}
+		.echoLogo {
+			img{
+				height: 30px;
+			}
+		}
+	}
+}
+
 
 
