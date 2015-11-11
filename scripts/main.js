@@ -214,7 +214,8 @@ musicApp.displayResults = function(genres){
 //	scroll to results
 		$( '.similarDiv' ).focus();
 		$('body,html').animate({scrollTop: $( '.similarDiv' ).offset().top});
-		
+		$( '#searchAgain' ).removeClass('hide');
+
 };
 
 //display all artist-searched results
@@ -243,6 +244,7 @@ musicApp.displayResultsFromArtists = function(artist){
 //	scroll to results
 	$( '.similarDiv' ).focus();
 	$('body,html').animate({scrollTop: $( '.similarDiv' ).offset().top});
+	$( '#searchAgain' ).removeClass('hide');
 };
 
 musicApp.go = function(){

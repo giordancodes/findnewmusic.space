@@ -225,8 +225,25 @@ ul.artistUL{
 	}
 }
 
+.hide{
+	display: none;
+}
+
+#searchAgain {
+	padding-bottom: 10rem;
+	padding-top: 5rem;
+	h3{
+		font-weight: 200;
+		font-size: 4rem;
+		a{
+			text-decoration: none;
+			color: $orange;
+		}
+	}
+}
+
 #resultContainer {
-	padding: 1rem 0 15rem;
+	padding: 1rem 0 5rem;
 	.genreResult{
 		margin-top: 2rem;
 		color: $orange;
@@ -378,13 +395,17 @@ footer{
 
 @media all and (max-width: 360px) {
 	#resultContainer{
-		padding: 1rem 1rem;
+		padding: 1rem 2rem;
 		h3{
 		font-size: 1.8rem;
 		}
 		.genreResult {
 			font-size: 3rem;	
 		}
+	}
+	.resultParent{
+		margin: 1rem 1rem 1rem 0px;
+		padding-left: 0;
 	}
 	.artistResult img {
 		height: 2.4rem;
