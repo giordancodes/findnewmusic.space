@@ -218,10 +218,6 @@ ul.artistUL{
 	}
 }
 
-.genreResult{
-	margin-top: 2rem;
-}
-
 .artistResult{
 	margin-top: 1rem;
 	img{
@@ -231,6 +227,10 @@ ul.artistUL{
 
 #resultContainer {
 	padding: 1rem 0 15rem;
+	.genreResult{
+		margin-top: 2rem;
+		color: $orange;
+	}
 	h3{
 		color: $white;
 		text-align: left;
@@ -377,8 +377,14 @@ footer{
 }
 
 @media all and (max-width: 360px) {
-	#resultContainer h3{
+	#resultContainer{
+		padding: 1rem 1rem;
+		h3{
 		font-size: 1.8rem;
+		}
+		.genreResult {
+			font-size: 3rem;	
+		}
 	}
 	.artistResult img {
 		height: 2.4rem;
