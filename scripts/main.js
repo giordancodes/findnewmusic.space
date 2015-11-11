@@ -19,7 +19,6 @@ musicApp.findArtistsDiscover = 'http://developer.echonest.com/api/v4/genre/artis
 musicApp.findSimilarArtists = 'http://developer.echonest.com/api/v4/artist/similar?api_key=7YUKSZXJZSPU0KXPU&format=json&results=30&start=0&name=';
 musicApp.last = 'http://www.last.fm/music/';
 
-
 musicApp.genreCount = function(){
 	$.ajax({
 				url: musicApp.allGenres,
