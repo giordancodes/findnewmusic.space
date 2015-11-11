@@ -80,6 +80,16 @@ p{
 	padding: 0;
 }
 
+a{
+	text-decoration: none;
+	color: $white;
+	text-decoration: none;
+	transition: color 0.6s;
+		&:hover, &:focus{
+			color: $orange;
+	}
+}
+
 //Section Styling Section Styling Section Styling Section Styling Section Styling 
 
 
@@ -208,14 +218,6 @@ ul.artistUL{
 		font-weight: 400;
 		padding: .5rem 0;
 	}
-	a{
-		text-decoration: none;
-		color: $orange;
-		transition: color 0.6s;
-		&:hover, &:focus{
-			color: $white;
-		}
-	}
 }
 
 .genreResult{
@@ -224,8 +226,10 @@ ul.artistUL{
 
 .artistResult{
 	margin-top: 1rem;
+	font-weight: 400;
 	img{
 		height: 4rem;
+		margin-right: 1rem;
 	}
 }
 
@@ -234,9 +238,9 @@ ul.artistUL{
 }
 
 #searchAgain{
-	padding: 5rem 3rem 15rem;
+	padding: 5rem 0 15rem;
 	h4{
-		font-size: 3.6rem;
+		font-size: 4.2rem;
 	}
 	
 #resultContainer {
@@ -256,8 +260,6 @@ ul.artistUL{
 			}
 		}
 	}
-	.artistResult h3{
-	}
 }
 
 .resultFromArtist{
@@ -266,7 +268,7 @@ ul.artistUL{
 
 .artistsBelow{
 	font-weight: 200;
-	color: $white;
+	color: $orange;
 	letter-spacing: 0.6rem;
 	font-size: 3rem;
 	border-bottom: solid 1px $white;
@@ -320,6 +322,9 @@ footer{
 	.wrapper{
 		padding-left: 3rem;
 		padding-right: 3rem;
+	}
+	#searchAgain{
+	padding: 5rem 4rem 15rem;
 	}
 	#similar{
 		padding-left: 1rem;
@@ -389,7 +394,10 @@ footer{
 
 @media all and (max-width: 480px) {
 	#resultContainer {
-		
+		.wrapper {
+			padding-left: 0;
+			padding-right: 0;
+		}
 		h3{
 			font-size: 2rem;
 		}
