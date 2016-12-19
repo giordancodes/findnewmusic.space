@@ -4,7 +4,7 @@ var gulp   = require('gulp'),
 		autoprefixer = require('gulp-autoprefixer'),
 		concat = require('gulp-concat'),
 		imageMin = require('gulp-imagemin'),
-		minifyCSS = require('gulp-minify-css'),
+		cleanCSS = require('gulp-clean-css'),
 		notify = require('gulp-notify'),
 		plumber = require('gulp-plumber'),
 		sass = require('gulp-sass'),
@@ -26,7 +26,7 @@ gulp.task('styles', function() {
 		}))
 		.pipe(sourcemaps.init())
 		.pipe(sass())
-		.pipe(minifyCSS())
+		.pipe(cleanCSS())
 		.pipe(concat('style.css'))
 		.pipe(autoprefixer('last 5 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
 		.pipe(sourcemaps.write('.'))

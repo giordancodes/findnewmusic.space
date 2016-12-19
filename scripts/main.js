@@ -16,9 +16,8 @@ musicApp.autoFill = [];
 musicApp.userInput = '';
 musicApp.findArtists = 'http://developer.echonest.com/api/v4/genre/artists?api_key=7YUKSZXJZSPU0KXPU&format=json&results=14&bucket=hotttnesss&name=';
 musicApp.findArtistsDiscover = 'http://developer.echonest.com/api/v4/genre/artists?api_key=7YUKSZXJZSPU0KXPU&format=json&results=14&bucket=discovery_rank&name=';
-musicApp.findSimilarArtists = 'http://developer.echonest.com/api/v4/artist/similar?api_key=7YUKSZXJZSPU0KXPU&format=json&results=30&start=0&name=';
+// musicApp.findSimilarArtists = 'http://developer.echonest.com/api/v4/artist/similar?api_key=7YUKSZXJZSPU0KXPU&format=json&results=30&start=0&name=';
 musicApp.last = 'http://www.last.fm/music/';
-
 
 musicApp.genreCount = function(){
 	$.ajax({
@@ -70,7 +69,7 @@ musicApp.sampleGenres = function(){
 		if (i === 5) {
 			$randoGenresSpan.append( ' and ' + musicApp.genreNames[randoGenre] );
 		} else {
-		$randoGenresSpan.append( musicApp.genreNames[randoGenre] + ', ' );	
+			$randoGenresSpan.append( musicApp.genreNames[randoGenre] + ', ' );	
 		}
 	}
 };
@@ -87,8 +86,8 @@ musicApp.formSubmitGenre = function(){
 //		make sure search isn't empty
 		if (genreName === ''){
 			$( '#errors' ).html( '<h4 class="error"> Please enter a genre! </h4>' )
-		}else{
-		$('#searchInput').val('');
+		} else {
+			$('#searchInput').val('');
 			
 //	remove spaces for search string
 		
@@ -100,6 +99,38 @@ musicApp.formSubmitGenre = function(){
 
 //submit form searching from artist
 
+
+musicApp.findArtistID = function(){
+
+		$('#searchArtist').on('submit', function(e){
+			e.preventDefault();
+			$('#resultContainer').empty();
+			$('#similar').empty();
+			var artistName = $('#searchInputArtist').val().toLowerCase();
+			
+	//		make sure serach isn't empty
+		if (artistName === ''){
+			$( '#errors' ).html( '<h4 class="error"> Please enter an artist! </h4>' )
+		} else {
+			$('#searchInputArtist').val('');
+		}
+		$.ajax({
+			url: 'https://api.spotify.com/v1/search?q=' + artistName + '&type=artist',
+			method: 'GET',
+			dataType: 'json'
+		  }).then(function(res) {
+					musicApp.artistID = res.artists.items[0].id;
+					console.log(musicApp.artistID);
+					musicApp.queryArtists( musicApp.artistID );
+						// return musicApp.artistID;
+		});
+	})
+
+		// musicApp.queryArtists( musicApp.findSimilarArtists, musicApp.artistID );
+		
+
+};
+
 musicApp.formSubmitArtist = function(){
 	$('#searchArtist').on('submit', function(e){
 		e.preventDefault();
@@ -110,16 +141,32 @@ musicApp.formSubmitArtist = function(){
 //		make sure serach isn't empty
 		if (artistName === ''){
 			$( '#errors' ).html( '<h4 class="error"> Please enter an artist! </h4>' )
-		}else{
-		$('#searchInputArtist').val('');
-			
+		} else {
+			$('#searchInputArtist').val('');		
 //	remove spaces for search string
-		musicApp.userInput = artistName.split(' ').join('+');
-		musicApp.queryArtists( musicApp.findSimilarArtists, musicApp.userInput );
-
+		// musicApp.userInput = artistName.split(' ').join('+');
 		}
 	});
-	
+};
+
+//queries the api, returns specified results from artist(similar artists)
+
+musicApp.queryArtists = function(queryType, artist){
+	// musicApp.findArtistID()
+	$.ajax({
+		url: "https://api.spotify.com/v1/artists/" + musicApp.artistID + "/related-artists",
+		method: 'GET',
+		dataType: 'json'
+		}).then(function(res) {
+//		verify input is an artist in the api
+		console.log(res.artists);
+		musicApp.displayResultsFromArtists(res.artists);
+			// if(res.response.status.message === 'The Identifier specified does not exist: ' + artist){
+			// 	$('#resultContainer').html("<h3>sorry, " + artist + " doesn't show in the database!<h3/>");
+			// } else {
+			// 	musicApp.displayResultsFromArtists(res.artists);
+			// }
+	});
 };
 
 //queries the api, returns specified results from genre(similar genres & artists)
@@ -140,22 +187,6 @@ musicApp.query = function(queryType, genre){
 	});
 };
 
-//queries the api, returns specified results from artist(similar artists)
-
-musicApp.queryArtists = function(queryType, artist){
-	$.ajax({
-		url: queryType+artist,
-		method: 'GET',
-		dataType: 'json'
-		}).then(function(res) {
-//		verify input is an artist in the api
-			if(res.response.status.message === 'The Identifier specified does not exist: ' + artist){
-				$('#resultContainer').html("<h3>sorry, " + artist + " doesn't show in the database!<h3/>");
-			}else{
-			musicApp.displayResultsFromArtists(res.response.artists);
-			}
-	});
-};
 
 //query hottttttt artists bases on genre
 
@@ -249,6 +280,7 @@ musicApp.displayResultsFromArtists = function(artist){
 
 musicApp.go = function(){
 	
+	musicApp.findArtistID();
 	musicApp.genreCount();
 	musicApp.formSubmitGenre();
 	musicApp.formSubmitArtist();
