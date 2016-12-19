@@ -6,10 +6,10 @@ function random(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 };
 
-musicApp.apiKey = '7YUKSZXJZSPU0KXPU';
+musicApp.apiKey = 'BQAlTWVSdlQISAE66c_Zr0Wt0LPNQNAr250SRZyAPB7TVk1U088Fegl4BzDugi0jmYlg56w06pasFWSL69mvhFi3Vd2-UiFcO-CDDmOhSqoUtXYuwJE2GnFxjNm3GJaz_DGRbfrd';
 musicApp.genreQuantity = 0;
 musicApp.genreList = '';
-musicApp.allGenres = 'http://developer.echonest.com/api/v4/genre/list?api_key=7YUKSZXJZSPU0KXPU&format=json&results=9999';
+musicApp.allGenres = 'https://api.spotify.com/v1/recommendations/available-genre-seeds';
 musicApp.findSimilarDescription = 'http://developer.echonest.com/api/v4/genre/similar?api_key=7YUKSZXJZSPU0KXPU&bucket=description&name=';
 musicApp.genreNames = [];
 musicApp.autoFill = [];
@@ -23,27 +23,25 @@ musicApp.genreCount = function(){
 	$.ajax({
 				url: musicApp.allGenres,
 				type: 'GET',
-				dataType: 'json'
-			}).then(function(res) {
+				dataType: 'json',
+				beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + musicApp.apiKey); }
+			})
+	.then(function(res) {
 		
 //counts the number of genres in API, and pass the total number to musicApp.genreQuantity		
+		$('.genreCount span').text(res.genres.length);
+		musicApp.genreQuantity = res.genres.length;
 		
-				$('.genreCount span').text(res.response.total);
-		musicApp.genreQuantity = res.response.total;
-		
-//adds the entire list of genres to musicApp.genreList, first converting from array to object
-		
-				musicApp.genreList = res.response.genres;
-		
-				for (var x = 0; x < musicApp.genreList.length; x++) {
-					musicApp.genreNames.push( musicApp.genreList[x].name );
-				}
+//adds the entire list of genres to musicApp.genreList, first converting from array to object	
+		musicApp.genreList = res.genres;
+		for (var x = 0; x < musicApp.genreList.length; x++) {
+			musicApp.genreNames.push( musicApp.genreList[x] );
+		}
 		
 //		fill random genres on page
-		
 			musicApp.sampleGenres();
+
 //		add all genres to autoFill
-		
 			musicApp.autoFill = musicApp.genreNames;
 			$('#searchInput').autocomplete({
 				source: musicApp.genreNames,
@@ -60,11 +58,12 @@ musicApp.genreCount = function(){
 //populate some random genres on page, allowing user to click on any one and find similar genres. user will also be able to input their own genres for showing results
 
 musicApp.sampleGenres = function(){
-	
+
+	var randSeed = musicApp.genreList.length;
 	$randoGenresSpan.text('');
 			
 	for (var i = 0; i < 6; i++){
-		var randoGenre = random(1384,1);
+		var randoGenre = random(randSeed,1);
 		
 		if (i === 5) {
 			$randoGenresSpan.append( ' and ' + musicApp.genreNames[randoGenre] );
