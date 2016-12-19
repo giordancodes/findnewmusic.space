@@ -15,19 +15,17 @@ musicApp.genreNames = [];
 musicApp.autoFill = [];
 musicApp.userInput = '';
 musicApp.findArtists = 'http://developer.echonest.com/api/v4/genre/artists?api_key=7YUKSZXJZSPU0KXPU&format=json&results=14&bucket=hotttnesss&name=';
-musicApp.findArtistsDiscover = 'http://developer.echonest.com/api/v4/genre/artists?api_key=7YUKSZXJZSPU0KXPU&format=json&results=14&bucket=discovery_rank&name=';
 // musicApp.findSimilarArtists = 'http://developer.echonest.com/api/v4/artist/similar?api_key=7YUKSZXJZSPU0KXPU&format=json&results=30&start=0&name=';
 musicApp.last = 'http://www.last.fm/music/';
 
 musicApp.genreCount = function(){
 	$.ajax({
-				url: musicApp.allGenres,
-				type: 'GET',
-				dataType: 'json',
-				beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + musicApp.apiKey); }
-			})
+		url: musicApp.allGenres,
+		type: 'GET',
+		dataType: 'json',
+		beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + musicApp.apiKey); }
+	})
 	.then(function(res) {
-		
 //counts the number of genres in API, and pass the total number to musicApp.genreQuantity		
 		$('.genreCount span').text(res.genres.length);
 		musicApp.genreQuantity = res.genres.length;
@@ -53,7 +51,7 @@ musicApp.genreCount = function(){
 				},
 				minLength: 1
 			});
-		});
+		})
 };
 
 //populate some random genres on page, allowing user to click on any one and find similar genres. user will also be able to input their own genres for showing results
