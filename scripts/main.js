@@ -102,13 +102,14 @@ musicApp.formSubmitGenre = function(){
 
 musicApp.findArtistID = function(){
 
-		$('#searchArtist').on('submit', function(e){
-			e.preventDefault();
-			$('#resultContainer').empty();
-			$('#similar').empty();
-			var artistName = $('#searchInputArtist').val().toLowerCase();
+	$('#searchArtist').on('submit', function(e){
+		e.preventDefault();
+		$('#resultContainer').empty();
+		$('#similar').empty();
+		musicApp.userQuery = $('#searchInputArtist').val();
+		var artistName = $('#searchInputArtist').val().toLowerCase();
 			
-	//		make sure serach isn't empty
+	//		make sure search isn't empty
 		if (artistName === ''){
 			$( '#errors' ).html( '<h4 class="error"> Please enter an artist! </h4>' )
 		} else {
@@ -152,7 +153,6 @@ musicApp.formSubmitArtist = function(){
 //queries the api, returns specified results from artist(similar artists)
 
 musicApp.queryArtists = function(queryType, artist){
-	// musicApp.findArtistID()
 	$.ajax({
 		url: "https://api.spotify.com/v1/artists/" + musicApp.artistID + "/related-artists",
 		method: 'GET',
@@ -252,7 +252,7 @@ musicApp.displayResults = function(genres){
 //display all artist-searched results
 
 musicApp.displayResultsFromArtists = function(artist){
-	$('#similar').text( 'similar to ' + musicApp.userInput.split('+').join(' ') + '...');
+	$('#similar').text( 'similar to ' + musicApp.userQuery + '...');
 
 	$.each(artist, function(i, value){
 		var artist = $('<h3>').addClass('artistResult').html("<img src='/assets/heart.svg' alt='heart icon'><a target='_blank' href='" + musicApp.last + value.name + "'>" + value.name + "</a>");

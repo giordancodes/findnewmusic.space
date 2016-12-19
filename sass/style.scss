@@ -296,13 +296,15 @@ footer{
 		width: 100%;
 	}
 	img{
-		padding: 1rem 1rem 0;
+		// padding: 1rem 1rem 0;
+		max-height: 30px;
 		border-radius: 1rem;
 		margin-bottom: -1.4rem;
-		transition: border-left 1s, border-right 1s;
-		&:hover, &:focus, &:active{
-			border-left: 5px solid $orange;
-			border-right: 5px solid $orange;
+	}
+	.spotLogo{
+		p{
+			float: left;
+			margin-right: 2rem;
 		}
 	}
 	p{
@@ -347,6 +349,12 @@ footer{
 	}
 }
 
+@media all and (max-width: 767px) {
+	.spotLogo p{
+		display: none;
+	}
+}
+
 @media all and (max-width: 698px) {
 	header{
 		padding-top: 2rem;
@@ -384,7 +392,7 @@ footer{
 		p{
 			font-size: 1.2rem;
 		}
-		.echoLogo {
+		.spotLogo {
 			img{
 				height: 30px;
 			}
