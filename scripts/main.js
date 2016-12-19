@@ -6,7 +6,7 @@ function random(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 };
 
-musicApp.apiKey = 'BQAlTWVSdlQISAE66c_Zr0Wt0LPNQNAr250SRZyAPB7TVk1U088Fegl4BzDugi0jmYlg56w06pasFWSL69mvhFi3Vd2-UiFcO-CDDmOhSqoUtXYuwJE2GnFxjNm3GJaz_DGRbfrd';
+musicApp.apiKey = 'BQB523xdiiQSBHYoRVuMsKKfid5KZ_5H-U6yLV2kL59OtY25lQrjyaYpurKHlwHNhS2FQqoc9VCWfICn6-HafW6hI_rNwuXaGsZQhRumbiCuTFk_Ipvb10elzByZCaPXRV1eVR6f';
 musicApp.genreQuantity = 0;
 musicApp.genreList = '';
 musicApp.allGenres = 'https://api.spotify.com/v1/recommendations/available-genre-seeds';
@@ -34,6 +34,7 @@ musicApp.genreCount = function(){
 		
 //adds the entire list of genres to musicApp.genreList, first converting from array to object	
 		musicApp.genreList = res.genres;
+		// console.log(musicApp.genreList);
 		for (var x = 0; x < musicApp.genreList.length; x++) {
 			musicApp.genreNames.push( musicApp.genreList[x] );
 		}
@@ -59,17 +60,20 @@ musicApp.genreCount = function(){
 
 musicApp.sampleGenres = function(){
 
-	var randSeed = musicApp.genreList.length;
+	var randSeed = musicApp.genreList.length - 4;
 	$randoGenresSpan.text('');
 			
-	for (var i = 0; i < 6; i++){
+	for (var i = 0; i < 4; i++){
 		var randoGenre = random(randSeed,1);
 		
-		if (i === 5) {
+		if (i === 3) {
 			$randoGenresSpan.append( ' and ' + musicApp.genreNames[randoGenre] );
 		} else {
 			$randoGenresSpan.append( musicApp.genreNames[randoGenre] + ', ' );	
 		}
+
+		musicApp.genreList.slice[randSeed];
+
 	}
 };
 
@@ -118,11 +122,14 @@ musicApp.findArtistID = function(){
 			url: 'https://api.spotify.com/v1/search?q=' + artistName + '&type=artist',
 			method: 'GET',
 			dataType: 'json'
-		  }).then(function(res) {
-					musicApp.artistID = res.artists.items[0].id;
-					console.log(musicApp.artistID);
-					musicApp.queryArtists( musicApp.artistID );
-						// return musicApp.artistID;
+		  })
+		.then(function(res) {
+			musicApp.artistID = res.artists.items[0].id;
+			musicApp.queryArtists( musicApp.artistID );
+			})
+		.catch(function(err) {
+			$( '#errors' ).html( '<h4 class="error"> Sorry, ' + musicApp.userQuery + ' returned no results.</h4>' )
+			console.log("error: " + err);
 		});
 	})
 
@@ -158,7 +165,6 @@ musicApp.queryArtists = function(queryType, artist){
 		dataType: 'json'
 		}).then(function(res) {
 //		verify input is an artist in the api
-		console.log(res.artists);
 		musicApp.displayResultsFromArtists(res.artists);
 			// if(res.response.status.message === 'The Identifier specified does not exist: ' + artist){
 			// 	$('#resultContainer').html("<h3>sorry, " + artist + " doesn't show in the database!<h3/>");
