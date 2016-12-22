@@ -282,7 +282,7 @@ musicApp.displayResultsFromArtists = function(artist){
 musicApp.go = function(){
 	
 	musicApp.findArtistID();
-	musicApp.genreCount();
+	// musicApp.genreCount();
 	musicApp.formSubmitGenre();
 	musicApp.formSubmitArtist();
 	
