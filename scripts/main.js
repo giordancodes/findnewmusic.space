@@ -77,7 +77,7 @@ musicApp.sampleGenres = function(){
 //submit form searching from genre
 
 musicApp.formSubmitGenre = function(){
-	$('#searchGenre').on('submit', function(e){
+	$('#searchArtist').on('submit', function(e){
 		e.preventDefault();
 		$('#resultContainer').empty();
 		$('#similar').empty();
