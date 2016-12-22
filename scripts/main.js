@@ -6,15 +6,15 @@ function random(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 };
 
-musicApp.apiKey = 'BQB523xdiiQSBHYoRVuMsKKfid5KZ_5H-U6yLV2kL59OtY25lQrjyaYpurKHlwHNhS2FQqoc9VCWfICn6-HafW6hI_rNwuXaGsZQhRumbiCuTFk_Ipvb10elzByZCaPXRV1eVR6f';
+// musicApp.apiKey = 'BQDf9vUQ3uRJOHpNbRQpQJCJ-onOy5qqOl66UL0eUqbH0xRlfhuAZk-h0TzR8lOC8s6FbUDcdRD9Buawun3YrNX-2YdDStVQsAJbpYuZ8GBgjFZYjRUKXh90X3e_f0QuNpEZRhMv';
 musicApp.genreQuantity = 0;
 musicApp.genreList = '';
 musicApp.allGenres = 'https://api.spotify.com/v1/recommendations/available-genre-seeds';
-musicApp.findSimilarDescription = 'http://developer.echonest.com/api/v4/genre/similar?api_key=7YUKSZXJZSPU0KXPU&bucket=description&name=';
+// musicApp.findSimilarDescription = 'http://developer.echonest.com/api/v4/genre/similar?api_key=7YUKSZXJZSPU0KXPU&bucket=description&name=';
 musicApp.genreNames = [];
 musicApp.autoFill = [];
 musicApp.userInput = '';
-musicApp.findArtists = 'http://developer.echonest.com/api/v4/genre/artists?api_key=7YUKSZXJZSPU0KXPU&format=json&results=14&bucket=hotttnesss&name=';
+// musicApp.findArtists = 'http://developer.echonest.com/api/v4/genre/artists?api_key=7YUKSZXJZSPU0KXPU&format=json&results=14&bucket=hotttnesss&name=';
 // musicApp.findSimilarArtists = 'http://developer.echonest.com/api/v4/artist/similar?api_key=7YUKSZXJZSPU0KXPU&format=json&results=30&start=0&name=';
 musicApp.last = 'http://www.last.fm/music/';
 
@@ -69,9 +69,8 @@ musicApp.sampleGenres = function(){
 		} else {
 			$randoGenresSpan.append( musicApp.genreNames[randoGenre] + ', ' );	
 		}
-
+		// take chosen genre out of possible display list
 		musicApp.genreList.slice[randSeed];
-
 	}
 };
 
@@ -161,14 +160,12 @@ musicApp.queryArtists = function(queryType, artist){
 		url: "https://api.spotify.com/v1/artists/" + musicApp.artistID + "/related-artists",
 		method: 'GET',
 		dataType: 'json'
-		}).then(function(res) {
-//		verify input is an artist in the api
+		})
+	.then(function(res) {
 		musicApp.displayResultsFromArtists(res.artists);
-			// if(res.response.status.message === 'The Identifier specified does not exist: ' + artist){
-			// 	$('#resultContainer').html("<h3>sorry, " + artist + " doesn't show in the database!<h3/>");
-			// } else {
-			// 	musicApp.displayResultsFromArtists(res.artists);
-			// }
+	})
+	.catch(function (err){
+		console.log("error: " + err);
 	});
 };
 
@@ -191,27 +188,28 @@ musicApp.query = function(queryType, genre){
 };
 
 
-//query hottttttt artists bases on genre
+//query artists bases on genre
 
 musicApp.queryArtistsFromGenres = function(queryType, genre){
 	$.ajax({
 		url: queryType+genre,
 		method: 'GET',
 		dataType: 'json'
-		}).then(function(res) {
+		})
+	.then(function(res) {
 			musicApp.artistList = res.response.artists;
-//		append artists as li's in artistList ul
-		
-		$.each(res.response.artists, function(i, value) {
-			
-//			create url for each artist
-			
-			var artistLink = musicApp.last + value.name.split(' ').join('+');
-			var artistList = $('<li>').append('<a target="_blank" href=' + artistLink + '>' + value.name + '</a>');
-			$('ul[data-genre="' + genre.split(' ').join('+') + '"]').append(artistList);
-		});
 
-	});
+//		append artists as li's in artistList ul		
+			$.each(res.response.artists, function(i, value) {				
+	//			create url for each artist			
+				var artistLink = musicApp.last + value.name.split(' ').join('+');
+				var artistList = $('<li>').append('<a target="_blank" href=' + artistLink + '>' + value.name + '</a>');
+				$('ul[data-genre="' + genre.split(' ').join('+') + '"]').append(artistList);
+			});
+		})
+	.catch(function (err){
+		console.log(err);
+	})
 };
 
 //display all genre-searched results
