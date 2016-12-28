@@ -283,7 +283,7 @@ musicApp.go = function(){
 	
 	musicApp.findArtistID();
 	// musicApp.genreCount();
-	musicApp.formSubmitGenre();
+	// musicApp.formSubmitGenre();
 	musicApp.formSubmitArtist();
 	
 };
